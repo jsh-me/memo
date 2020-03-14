@@ -10,5 +10,6 @@ interface EditContract{
     interface Presenter{
         var view : View
         fun getuserData(id: Int)
+        fun edituserData(id : Int, title:String, content:String)
     }
 }
