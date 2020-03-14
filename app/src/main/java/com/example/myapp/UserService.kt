@@ -21,7 +21,7 @@ interface UserService {
     fun getUserData(@Path("id") id:Int ):Observable<Data>
 
     @PUT("/memo/{id}")
-    fun editData(@Path("id") id: Int) :Observable<ArrayList<Data>>
+    fun editData(@Path("id") id: Int, @Body data: Data) :Observable<Data>
 
     @POST("/memo")
     fun addData(@Body data: PostData): Flowable<Data> //해당 data를 넣으면 db로 감
