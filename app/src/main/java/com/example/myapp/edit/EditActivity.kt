@@ -1,12 +1,17 @@
 package com.example.myapp.edit
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapp.data.Data
 import com.example.myapp.R
+import com.example.myapp.main.MainActivity
 import kotlinx.android.synthetic.main.activity_edit.*
 
 class EditActivity :AppCompatActivity(), EditContract.View {
+    var presenter = EditPresenter(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit)
@@ -14,15 +19,25 @@ class EditActivity :AppCompatActivity(), EditContract.View {
 
         edit(id)
 
+        edit_btn.setOnClickListener { updatedata(id) }
+
     }
 
     fun edit(id: Int){
-        var presenter = EditPresenter(this)
        presenter.getuserData(id)
+    }
+
+    fun updatedata(id:Int){
+        presenter.edituserData(id,edit_title.text.toString(), edit_content.text.toString())
+        Log.i("update:","${id}, ${edit_title.text}, ${edit_content.text}")
+
+        var intent= Intent(this@EditActivity, MainActivity::class.java)
+        startActivity(intent)
     }
 
     override fun getuserView(list: Data) {
         edit_title.setText(list.title)
         edit_content.setText(list.content)
     }
+
 }

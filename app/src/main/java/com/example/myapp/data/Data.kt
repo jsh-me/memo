@@ -1,4 +1,4 @@
-package com.example.myapp
+package com.example.myapp.data
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
