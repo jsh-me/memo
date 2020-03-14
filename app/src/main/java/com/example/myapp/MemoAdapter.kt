@@ -14,7 +14,7 @@ onBindViewHolder: 생성된 View에 보여줄 데이터를 설정(set)해줍니�
 ViewHolder: ViewHolder 단위 객체로 View의 데이터를 설정합니다
  */
 
-class MemoAdapter (val memolist: ArrayList<Data>):
+class MemoAdapter (val memolist: ArrayList<Data>, var click: (Int) -> Unit):
         RecyclerView.Adapter<Holder>() {
 
 
@@ -29,18 +29,19 @@ class MemoAdapter (val memolist: ArrayList<Data>):
 
     //View가 생성되면 onBindViewHolder가 호출
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.bind(memolist[position].id, memolist[position].title, memolist[position].content)
-
+        holder.bind(memolist[position].id, memolist[position].title, memolist[position].content, click)
     }
+
+
 }
+
 
 class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){
     //bind 함수는 ViewHolder와 클래스의 각 변수를 연동하는 역할을 한다. 이후에 Override 할 함수에서 사용할 것이다.
-    fun bind(id:Int, title: String, content: String){
+    fun bind(id:Int, title: String, content: String, click: (Int) -> Unit){
         itemView.txt_content.text = content
         itemView.txt_title.text = title
-        Log.i("id number ","${id}")
+        itemView.setOnClickListener { click(id)  }
 
     }
 }
-
