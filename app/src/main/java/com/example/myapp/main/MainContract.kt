@@ -1,6 +1,6 @@
 package com.example.myapp.main
 
-import com.example.myapp.Data
+import com.example.myapp.data.Data
 
 interface MainContract {
 

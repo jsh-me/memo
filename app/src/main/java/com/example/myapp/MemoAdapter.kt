@@ -1,10 +1,10 @@
 package com.example.myapp
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapp.data.Data
 import kotlinx.android.synthetic.main.memo_list.view.*
 
 /*
@@ -17,7 +17,6 @@ ViewHolder: ViewHolder 단위 객체로 View의 데이터를 설정합니다
 class MemoAdapter (val memolist: ArrayList<Data>, var click: (Int) -> Unit):
         RecyclerView.Adapter<Holder>() {
 
-
     //RecyclerView가 초기화 될 때 onCreateViewHolder가 호출
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val inflatedView =
@@ -25,15 +24,21 @@ class MemoAdapter (val memolist: ArrayList<Data>, var click: (Int) -> Unit):
         return Holder(inflatedView)
     }
 
-    override fun getItemCount(): Int = memolist.size
-
-    //View가 생성되면 onBindViewHolder가 호출
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.bind(memolist[position].id, memolist[position].title, memolist[position].content, click)
+    override fun getItemCount(): Int {
+        return memolist.size
     }
 
+        //View가 생성되면 onBindViewHolder가 호출
+        override fun onBindViewHolder(holder: Holder, position: Int) {
+            holder.bind(memolist[position].id, memolist[position].title, memolist[position].content, click)
+        }
 
-}
+    fun adduserData(title:String, content: String){
+        memolist.add(Data(itemCount + 1, title, content))
+    }
+
+    }
+
 
 
 class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){
