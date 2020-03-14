@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".edit.EditActivity"/>
+        <activity android:name=".write.WriteActivity"/>
+
     </application>
 
 </manifest>
