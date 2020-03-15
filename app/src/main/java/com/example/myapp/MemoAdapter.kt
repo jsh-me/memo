@@ -33,9 +33,9 @@ class MemoAdapter (val memolist: ArrayList<Data>, var click: (Int) -> Unit):
             holder.bind(memolist[position].id, memolist[position].title, memolist[position].content, click)
         }
 
-    fun adduserData(title:String, content: String){
-        memolist.add(Data(itemCount + 1, title, content))
-    }
+//    fun adduserData(title:String, content: String){
+//        memolist.add(Data(itemCount + 1, title, content))
+//    }
 
     }
 

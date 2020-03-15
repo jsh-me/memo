@@ -1,4 +1,4 @@
-package com.example.myapp
+package com.example.myapp.Network
 
 import com.example.myapp.data.Data
 import com.example.myapp.data.PostData
