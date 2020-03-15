@@ -1,8 +1,8 @@
 package com.example.myapp.usecase
 
 
-import com.example.myapp.RetrofitUtil
-import com.example.myapp.UserService
+import com.example.myapp.Network.RetrofitUtil
+import com.example.myapp.Network.UserService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 

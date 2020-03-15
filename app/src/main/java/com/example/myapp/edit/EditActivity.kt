@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapp.data.Data
 import com.example.myapp.R
+import com.example.myapp.delete.Deletepresenter
 import com.example.myapp.main.MainActivity
 import kotlinx.android.synthetic.main.activity_edit.*
 
@@ -20,8 +21,20 @@ class EditActivity :AppCompatActivity(), EditContract.View {
         edit(id)
 
         edit_btn.setOnClickListener { updatedata(id) }
+        delete_btn.setOnClickListener { deletedata(id) }
+
+
 
     }
+
+    fun deletedata(id:Int) {
+        var presenter = Deletepresenter()
+        presenter.deleteuserdata(id)
+
+        var intent = Intent(this@EditActivity, MainActivity::class.java)
+        startActivity(intent)
+    }
+
 
     fun edit(id: Int){
        presenter.getuserData(id)
