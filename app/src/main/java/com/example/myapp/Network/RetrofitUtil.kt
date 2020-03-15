@@ -1,4 +1,4 @@
-package com.example.myapp
+package com.example.myapp.Network
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -8,6 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitUtil {
     companion object {
+        val baseUrl = "http://ec2-52-79-156-63.ap-northeast-2.compute.amazonaws.com:8080"
+
         fun retrofitBuilder(): Retrofit {
             val httpClient = OkHttpClient.Builder()
             httpClient.addInterceptor { chain: Interceptor.Chain ->
@@ -19,7 +21,7 @@ class RetrofitUtil {
             }
             val client = httpClient.build()
             return Retrofit.Builder()
-                .baseUrl(GlobalConst.baseUrl)
+                .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)
