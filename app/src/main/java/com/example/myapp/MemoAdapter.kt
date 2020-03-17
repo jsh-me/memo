@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapp.data.Data
+import com.example.myapp.databinding.MemoListBinding
 import kotlinx.android.synthetic.main.memo_list.view.*
 
 /*
@@ -22,6 +23,7 @@ class MemoAdapter (val memolist: ArrayList<Data>, var click: (Int) -> Unit):
         val inflatedView =
             LayoutInflater.from(parent.context).inflate(R.layout.memo_list, parent, false)
         return Holder(inflatedView)
+
     }
 
     override fun getItemCount(): Int {
@@ -32,10 +34,6 @@ class MemoAdapter (val memolist: ArrayList<Data>, var click: (Int) -> Unit):
         override fun onBindViewHolder(holder: Holder, position: Int) {
             holder.bind(memolist[position].id, memolist[position].title, memolist[position].content, click)
         }
-
-//    fun adduserData(title:String, content: String){
-//        memolist.add(Data(itemCount + 1, title, content))
-//    }
 
     }
 

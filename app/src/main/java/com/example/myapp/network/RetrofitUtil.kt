@@ -1,4 +1,4 @@
-package com.example.myapp.Network
+package com.example.myapp.network
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

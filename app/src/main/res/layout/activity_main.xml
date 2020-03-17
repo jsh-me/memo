@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+    <variable
+        name="main"
+        type="com.example.myapp.main.MainActivity" />
+
+    </data>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,6 +26,7 @@
         android:layout_margin="20dp"
         android:baselineAlignBottom="true"
         android:src="@drawable/ic_add_black_24dp"
+        android:onClick="@{main::FabClick}"
         app:elevation="6dp" />
 
 
@@ -28,3 +37,4 @@
 
 
 </RelativeLayout>
+</layout>
