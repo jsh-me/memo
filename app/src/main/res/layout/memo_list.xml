@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+<data>
+    <variable
+        name="data"
+        type="com.example.myapp.data.Data" />
+
+</data>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -11,14 +19,15 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:textStyle="bold"
-        tools:text="Hi!!"/>
+        android:text="@{data.title}"/>
 
     <TextView
         android:id="@+id/txt_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
-        tools:text="hello"/>
+        android:text="@{data.content}"/>
 
 
 </LinearLayout>
+</layout>
