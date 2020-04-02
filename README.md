@@ -1,12 +1,12 @@
 # README
 
-### Yapp Team Android 1 Client Toy Project Basic
----
-- Kotlin
-- Rxjava2
-- Retrofit2
-- DataBinding
-- MVP
+* Yapp Team Android 1 Client Toy Project 🤗
+
+- [x] Kotlin
+- [x] Rxjava2
+- [x] Retrofit2
+- [x] DataBinding
+- [x] MVP
 
 
 
